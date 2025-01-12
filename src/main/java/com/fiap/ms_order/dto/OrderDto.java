@@ -8,4 +8,19 @@ public class OrderDto {
     private List<CustomerDto> customer;
     private int orderTotal;
     private String orderStatus;
+
+    public int getOrderId() {return orderId;}
+    public void setOrderId(int orderId) {this.orderId = orderId;}
+
+    public List<ProductDto> getProducts() {return products;}
+    public void setProducts(List<ProductDto> products) {this.products = products;}
+
+    public List<CustomerDto> getCustomer() {return customer;}
+    public void setCustomer(List<CustomerDto> customer) {this.customer = customer;}
+
+    public int getOrderTotal() {return orderTotal;}
+    public void setOrderTotal(int orderTotal) {this.orderTotal = orderTotal;}
+
+    public String getOrderStatus() {return orderStatus;}
+    public void setOrderStatus(String orderStatus) {this.orderStatus = orderStatus;}
 }
