@@ -1,9 +1,7 @@
 package com.fiap.ms_order.controller;
 
 import com.fiap.ms_order.dto.OrderDto;
-import com.fiap.ms_order.repository.OrderRepository;
 import com.fiap.ms_order.service.OrderService;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
