@@ -1,8 +1,9 @@
 package com.fiap.ms_order.service;
 
+import com.fiap.ms_order.dto.CustomerDto;
 import com.fiap.ms_order.dto.OrderDto;
+import com.fiap.ms_order.dto.ProductDto;
 import com.fiap.ms_order.repository.OrderRepository;
-import org.springframework.core.annotation.Order;
 
 import java.util.List;
 
@@ -19,11 +20,20 @@ public class OrderService {
         boolean hasCustomer;
         boolean success = false;
 
-        hasProduct = orderRepository.getProductById(1);
-        hasCustomer = orderRepository.getCustomerById(1);
+        if(!order.getProducts().isEmpty()) {
+            for (ProductDto product : order.getProducts()) {
+                hasProduct = orderRepository.getProductById(product.getProductId());
 
-        if(hasProduct && hasCustomer) {
-            success = orderRepository.insertOrder(order);
+                if (hasProduct) {
+                    success = orderRepository.insertOrder(order);
+                }
+            }
+
+            hasCustomer = orderRepository.getCustomerById(order.getCustomer().getCustomerId());
+
+            if(hasCustomer) {
+                //login customer
+            }
         }
 
         return success;
